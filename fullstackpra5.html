@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Mobile Number Validation</title>
+    <script type="text/javascript">
+        // Function to validate mobile number
+        function validateMobileNumber() {
+            // Get the mobile number input from the form
+            var mobileNumber = document.getElementById("mobileNumber").value;
+
+            // Regular expression to check if the number is exactly 10 digits
+            var mobileRegex = /^\d{10}$/;
+
+            // Validate the mobile number using the regex
+            if (mobileRegex.test(mobileNumber)) {
+                // Success message if the number is valid
+                alert("Success: The mobile number is valid!");
+            } else {
+                // Failure message if the number is invalid
+                alert("Failure: Please enter a valid 10-digit mobile number.");
+            }
+
+            // Prevent form submission to keep the page from refreshing
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>Mobile Number Validation</h1>
+
+    <!-- Form to collect mobile number -->
+    <form onsubmit="return validateMobileNumber()">
+        <label for="mobileNumber">Enter your mobile number (10 digits):</label>
+        <input type="text" id="mobileNumber" name="mobileNumber" placeholder="1234567890" required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

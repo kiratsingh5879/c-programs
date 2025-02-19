@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Hover Effect on Paragraphs</title>
+    <style>
+        /* Styling for the paragraphs */
+        p {
+            font-size: 18px;
+            padding: 10px;
+            margin: 15px 0;
+        }
+
+        /* Different initial colors for the paragraphs */
+        #para1 {
+            color: red;
+        }
+
+        #para2 {
+            color: green;
+        }
+
+        #para3 {
+            color: purple;
+        }
+    </style>
+    <script type="text/javascript">
+        // JavaScript function to change the color to blue on hover
+        function changeColorToBlue(element) {
+            element.style.color = "blue";
+        }
+
+        // JavaScript function to revert the color to original
+        function revertColor(element, originalColor) {
+            element.style.color = originalColor;
+        }
+    </script>
+</head>
+<body>
+    <h1>Hover over the Paragraphs to Change Color</h1>
+
+    <p id="para1" 
+       onmouseover="changeColorToBlue(this)" 
+       onmouseout="revertColor(this, 'red')">
+        This is the first paragraph in red. Hover over to change the color to blue.
+    </p>
+
+    <p id="para2" 
+       onmouseover="changeColorToBlue(this)" 
+       onmouseout="revertColor(this, 'green')">
+        This is the second paragraph in green. Hover over to change the color to blue.
+    </p>
+
+    <p id="para3" 
+       onmouseover="changeColorToBlue(this)" 
+       onmouseout="revertColor(this, 'purple')">
+        This is the third paragraph in purple. Hover over to change the color to blue.
+    </p>
+</body>
+</html>

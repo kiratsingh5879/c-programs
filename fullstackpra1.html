@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Max and Min of Array</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            display: inline-block;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script type="text/javascript">
+        // JavaScript function to find the largest and smallest number in an array
+        function MaxandMinofArray() {
+            // Get the input value from the text box
+            let input = document.getElementById('arrayInput').value;
+            
+            // Convert the input string to an array of integers
+            let arr = input.split(',').map(Number);
+            
+            // Check if the array contains valid integers
+            if (arr.some(isNaN)) {
+                document.getElementById('output').innerHTML = "Please enter a valid array of integers.";
+                return;
+            }
+            
+            // Check if the array is not empty
+            if (arr.length === 0) {
+                document.getElementById('output').innerHTML = "The array is empty!";
+                return;
+            }
+            
+            let max = arr[0];
+            let min = arr[0];
+            
+            // Loop through the array to find max and min
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+            }
+            
+            // Display the result
+            document.getElementById('output').innerHTML = 
+                "Largest number: " + max + "<br/>" + "Smallest number: " + min;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Max and Min of Array</h1>
+        <p>Graphic Era Hill University, Dehradun</p>
+    </header>
+    
+    <div class="content">
+        <p>Enter an array of integers, separated by commas (e.g., 1, 2, 3, 4, 5):</p>
+        
+        <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+        <button onclick="MaxandMinofArray()">Find Largest and Smallest</button>
+        
+        <div id="output" class="output">
+            <!-- The result will be displayed here -->
+        </div>
+    </div>
+</body>
+</html>

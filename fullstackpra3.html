@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Button Click Alert</title>
+    <script type="text/javascript">
+        // JavaScript function to display an alert based on the button clicked
+        function buttonClick(buttonNumber) {
+            if (buttonNumber === 1) {
+                alert("First button is clicked");
+            } else if (buttonNumber === 2) {
+                alert("Second button is clicked");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Button Click Alert Example</h1>
+    <p>Click on a button below to trigger an alert:</p>
+    
+    <!-- First Button -->
+    <button onclick="buttonClick(1)">First Button</button>
+    
+    <!-- Second Button -->
+    <button onclick="buttonClick(2)">Second Button</button>
+</body>
+</html>
